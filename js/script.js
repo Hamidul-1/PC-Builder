@@ -1,18 +1,21 @@
-document.getElementById('eightGB').addEventListener('click',function(){
-    updatePrice("memory-cost",0);
-})
-document.getElementById('sixteenGB').addEventListener('click',function(){
-    updatePrice("memory-cost",300);
-})
+
+function onClick(clickId,updateId,price){
+    document.getElementById(clickId).addEventListener('click',function(){
+        updatePrice(updateId,price);
+    })
+}
+
+onClick('sixteenGB','memory-cost',300);
+onClick('eightGB','memory-cost',0);
+onClick('ssd1','storage-cost',0);
+onClick('ssd2','storage-cost',200);
+onClick('ssd3','storage-cost',300);
+onClick('free-delivery','delivery-cost',0)
+onClick('paid-delivery','delivery-cost',20)
 
 
-document.getElementById('ssd3').addEventListener('click',function(){
-    updatePrice("storage-cost",500);
-})
 
-document.getElementById('paid-delivery').addEventListener('click',function(){
-    updatePrice("delivery-cost",20);
-})
+
 
 function updatePrice(itemId, price){
     const memoryCost = document.getElementById(itemId);

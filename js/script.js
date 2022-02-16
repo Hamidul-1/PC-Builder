@@ -14,9 +14,6 @@ onClick('free-delivery','delivery-cost',0)
 onClick('paid-delivery','delivery-cost',20)
 
 
-
-
-
 function updatePrice(itemId, price){
     const memoryCost = document.getElementById(itemId);
     memoryCost.innerText = price;
@@ -31,10 +28,24 @@ function updatePrice(itemId, price){
     console.log(totalPrice);
     
     const total = document.getElementById('total-price');
-    total.innerText = totalPrice;
-    
-        
+    total.innerText = totalPrice;      
 }
+
+const fakeCode = "pHero";
+document.getElementById('apply-btn').addEventListener('click',function(){
+    const code = document.getElementById('promo-input').value;
+    if(code === fakeCode){
+        const total = document.getElementById('total-price');
+        let totalPrice = parseFloat(total.innerText);
+
+        const discount = (totalPrice * 20)/100;
+        totalPrice = totalPrice - discount;
+        total.innerText = totalPrice;
+    }
+    else{
+
+    }
+})
 
 
 

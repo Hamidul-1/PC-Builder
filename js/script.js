@@ -1,23 +1,37 @@
+document.getElementById('eightGB').addEventListener('click',function(){
+    updatePrice("memory-cost",0);
+})
 document.getElementById('sixteenGB').addEventListener('click',function(){
-
-    const memoryCost = document.getElementById('memory-cost');
-    memoryCost.innerText = 200;
-    
-    // console.log(newMemoryCost);
-    const bestPrice = document.getElementById('best-price').innerText;
-    // const memoryCost = document.getElementById('memory-cost').innerText;
-    const storageCost = document.getElementById('storage-cost').innerText;
-    const deliveryCost = document.getElementById('delivery-cost').innerText;
-
-    const totalPrice = parseFloat(bestPrice) + parseFloat(memoryCost) + parseFloat(storageCost) + parseFloat(deliveryCost);
-    console.log(totalPrice);
-
-    const total = document.getElementById('total-price');
-    total.innerText = totalPrice;
-
+    updatePrice("memory-cost",300);
 })
 
 
+document.getElementById('ssd3').addEventListener('click',function(){
+    updatePrice("storage-cost",500);
+})
+
+document.getElementById('paid-delivery').addEventListener('click',function(){
+    updatePrice("delivery-cost",20);
+})
+
+function updatePrice(itemId, price){
+    const memoryCost = document.getElementById(itemId);
+    memoryCost.innerText = price;
+        
+    // console.log(newMemoryCost);
+    const bestPrice = document.getElementById("best-price").innerText;
+    const memoryPrice = document.getElementById("memory-cost").innerText;
+    const storagePrice = document.getElementById("storage-cost").innerText;
+    const deliveryPrice = document.getElementById("delivery-cost").innerText;
+    
+    const totalPrice = parseFloat(bestPrice) + parseFloat(memoryPrice) + parseFloat(storagePrice) + parseFloat(deliveryPrice);
+    console.log(totalPrice);
+    
+    const total = document.getElementById('total-price');
+    total.innerText = totalPrice;
+    
+        
+}
 
 
 
